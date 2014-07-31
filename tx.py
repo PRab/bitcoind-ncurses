@@ -52,7 +52,7 @@ def draw_window(state, window):
 def draw_inputs(state):
     window_height = (state['y'] - 4) / 2
     window_width = state['x']
-    win_inputs = curses.newwin(window_height, window_width+1, 3, 0)
+    win_inputs = curses.newwin(window_height, window_width, 3, 0)
     if state['tx']['mode'] == 'inputs':
         win_inputs.addstr(0, 1, "inputs:                     (UP/DOWN: select, ENTER: view, V: verbose)", curses.A_BOLD + curses.color_pair(3))
     else:
