@@ -17,6 +17,7 @@ dependencies
 
 * tested with python 2.7.3, bitcoind 0.9.2.1
 * jgarzik's bitcoinrpc library (https://github.com/jgarzik/python-bitcoinrpc)
+* (Windows only) ncurses library (http://www.lfd.uci.edu/~gohlke/pythonlibs/#curses)
 
 features
 --------
@@ -38,6 +39,11 @@ alternatively, create a file with the following details:
 rpcuser=xxx
 rpcpassword=yyy
 testnet=0
+```
+
+if you are running bitcoin-qt instead of bitcoind, you must also add the following details
+```
+server=1
 ```
 
 this is an early development release. expect (safe) breakage
