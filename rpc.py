@@ -16,8 +16,13 @@ def init(interface_queue, cfg):
             rpcport = '18332'
         else:
             rpcport = '8332'
+        
+        if cfg.get('rpcssl') == "1":
+            rpcprotocol = 'https'
+        else:
+            rpcprotocol = 'http'
 
-        rpcurl = "http://" + rpcuser + ":" + rpcpassword + "@" + rpcip + ":" + rpcport
+        rpcurl = rpcprotocol + "://" + rpcuser + ":" + rpcpassword + "@" + rpcip + ":" + rpcport
     except:
         stop(interface_queue, "invalid configuration file or missing values")
         return False
